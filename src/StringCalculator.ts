@@ -9,7 +9,7 @@ export function calculateString(str: string) {
       const negatives = numbers.filter((n) => n < 0);
       if (negatives.length > 0) {
         throw new Error(
-          `negative numbers not allowed ${negatives.length === 1 ? negatives[0] : negatives.join(", ")}`
+          `negative numbers not allowed ${negatives.length === 1 ? negatives[0] : negatives.join(", ")}`,
         );
       } else {
         const validNumbers = numbers.filter((n) => n > 0 && n < 1000);
