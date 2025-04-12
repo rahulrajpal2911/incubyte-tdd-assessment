@@ -5,7 +5,8 @@
   "main": "dist/StringCalculator.js",
   "scripts": {
     "build": "npm run format && tsc",
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "start": "concurrently \"tsc --watch\" \"node dist/StringCalculator.js\"",
     "format": "prettier --write . && npx eslint . --ignore-pattern 'dist/*' --ignore-pattern 'node_modules/*'",
     "prepare": "husky"

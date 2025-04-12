@@ -21,7 +21,7 @@ describe("String Calculator TDD Kata", () => {
   it("Should return sum if delimiter is a comma", () => {
     for (let i = 0; i < 10; i++) {
       expect(calculateString(`${i.toString()},${(i + 1).toString()}`)).toBe(
-        i + (i + 1)
+        i + (i + 1),
       );
     }
   });
