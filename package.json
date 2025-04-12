@@ -1,13 +1,14 @@
 {
   "name": "tdd-assessment",
   "version": "0.0.1",
-  "description": "A project created for incubyte for assessing the skillset using TDD approach.",
-  "main": "dist/app.js",
+  "description": "A project created for Incubyte for assessing the skillset using TDD approach.",
+  "main": "dist/StringCalculator.js",
   "scripts": {
-    "prettier": "prettier --write .",
-    "build": "npm run prettier && tsc",
+    "build": "npm run format && tsc",
     "test": "jest",
-    "start": "tsc --watch & node dist/app.js"
+    "start": "concurrently \"tsc --watch\" \"node dist/StringCalculator.js\"",
+    "format": "prettier --write . && npx eslint . --ignore-pattern 'dist/*' --ignore-pattern 'node_modules/*'",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -27,14 +28,18 @@
   },
   "homepage": "https://github.com/rahulrajpal2911/incubyte-tdd-assessment#readme",
   "devDependencies": {
+    "@eslint/js": "^9.24.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.11.30",
+    "concurrently": "^7.2.2",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "prettier": "^3.5.3",
     "ts-jest": "^29.3.1",
-    "typescript": "^5.4.3"
-  },
-  "dependencies": {
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^8.29.1"
   }
 }

@@ -1,9 +1,13 @@
-import type { Config } from "jest";
+// jest.config.ts
+import type { Config } from "@jest/types";
 
-const config: Config = {
-  verbose: true,
-  testMatch: ["**/tests/**/*.test.ts"], // Looks for tests in tests folder
-  watchPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/"], // Optional: Ignore watching these
+const config: Config.InitialOptions = {
+  transform: {
+    "^.+\\.(ts)$": "ts-jest", // Transpile TypeScript files using ts-jest
+  },
+  testEnvironment: "node",
+  moduleFileExtensions: ["ts", "js"],
+  preset: "ts-jest",
 };
 
 export default config;
