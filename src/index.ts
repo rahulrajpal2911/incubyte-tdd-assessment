@@ -1,3 +1,3 @@
 import { calculateString } from "./StringCalculator";
 
-calculateString("-1");
+calculateString("2;5;6");

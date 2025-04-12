@@ -37,6 +37,10 @@ describe("String Calculator TDD Kata", () => {
     expect(calculateString("//;\n1;2;6")).toBe(9);
   });
 
+  it("Should ignore Numbers > 1000", () => {
+    expect(calculateString("9;1000;9")).toBe(18);
+  });
+
   it("Should throw an exception if negative number found", () => {
     expect(() => calculateString("-1")).toThrow(
       "negative numbers not allowed -1"
