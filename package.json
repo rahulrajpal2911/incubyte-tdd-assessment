@@ -2,12 +2,12 @@
   "name": "tdd-assessment",
   "version": "0.0.1",
   "description": "A project created for Incubyte for assessing the skillset using TDD approach.",
-  "main": "dist/StringCalculator.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npm run format && tsc",
     "test": "jest",
     "test:watch": "jest --watch",
-    "start": "concurrently \"tsc --watch\" \"node dist/StringCalculator.js\"",
+    "start": "concurrently \"tsc --watch\" \"node .\"",
     "format": "prettier --write . && npx eslint . --ignore-pattern 'dist/*' --ignore-pattern 'node_modules/*'",
     "prepare": "husky"
   },
@@ -42,5 +42,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.4.3",
     "typescript-eslint": "^8.29.1"
+  },
+  "dependencies": {
+    "jest-html-reporter": "^4.1.0"
   }
 }

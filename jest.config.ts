@@ -8,6 +8,17 @@ const config: Config.InitialOptions = {
   testEnvironment: "node",
   moduleFileExtensions: ["ts", "js"],
   preset: "ts-jest",
+  reporters: [
+    "default",
+    [
+      "./node_modules/jest-html-reporter",
+      {
+        pageTitle: "TDD Assessment Test Report",
+        includeFailureMsg: true,
+        includeConsoleLog: true,
+      },
+    ],
+  ],
 };
 
 export default config;

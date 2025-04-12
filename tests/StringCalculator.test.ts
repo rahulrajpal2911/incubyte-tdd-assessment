@@ -25,4 +25,25 @@ describe("String Calculator TDD Kata", () => {
       );
     }
   });
+
+  //Support different delimiters:
+  it("Should support different delimiters", () => {
+    expect(calculateString("//;\n1;2")).toBe(3);
+  });
+
+  //Calling add with a negative number will throw an exception:
+  //negative numbers not allowed <negative_number>
+  it("Should throw an exception if negative number found", () => {
+    expect(() => calculateString("-1")).toThrow(
+      "negative numbers not allowed -1",
+    );
+  });
+
+  //Calling add with a negative number will throw an exception:
+  //negative numbers not allowed <negative_number>
+  it("Should throw an exception if multiple negative number found", () => {
+    expect(() => calculateString("-1;-3;2")).toThrow(
+      "negative numbers not allowed -1, -3",
+    );
+  });
 });

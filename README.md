@@ -29,6 +29,7 @@ Create a `StringCalculator` with the following features:
 .
 ├── src/
 │   └── StringCalculator.ts
+|   └── index.ts
 ├── tests/
 │   └── StringCalculator.test.ts
 ├── jest.config.ts

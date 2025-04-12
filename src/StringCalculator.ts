@@ -1,12 +1,22 @@
 export function calculateString(str: string) {
+  let result = 0;
   if (str.length !== 0) {
-    if (!isNaN(Number(str)) && Number(str) < 10) {
-      return Number(str);
+    if (!isNaN(Number(str)) && Number(str) < 10 && Number(str) > 0) {
+      result = Number(str);
     } else {
-      const regex = /[,]/g;
+      const regex = /[,/\n;]/g;
       const numbers = str.split(regex).map(Number);
-      return numbers.reduce((a, b) => a + b);
+      const negatives = numbers.filter((n) => n < 0);
+      if (negatives.length > 0) {
+        throw new Error(
+          `negative numbers not allowed ${negatives.length === 1 ? negatives[0] : negatives.join(", ")}`,
+        );
+      }
+      const value = numbers.reduce((a, b) => {
+        return a + b;
+      });
+      result = value;
     }
   }
-  return 0;
+  return result;
 }
